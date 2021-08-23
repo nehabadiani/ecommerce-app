@@ -45,12 +45,17 @@ function App() {
       <Content style={{ padding: 20 }}>
         {products.map((product) => (
           <Card
+            title={`${product.name}`}
             hoverable
-            style={{ width: 240 }}
+            style={{ display: "inline-block", width: 270, marginLeft: 50, marginBottom: 10}}
             cover={<img alt={`${product.name}`} src={product.image} />}
           >
             <Space direction="vertical" size="large">
-              <Meta title={product.name} description={product.description} />
+              <Meta
+                // title={product.name}
+                description={product.description}
+                style={{height: 110}}
+              />
               <Statistic value={`$${product.price}`} />
               <CustomButton
                 icon={<ShoppingCartOutlined />}
